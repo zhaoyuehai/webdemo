@@ -1,16 +1,21 @@
 package com.yuehai.webdemo.www.dao.impl;
 
-import com.yuehai.webdemo.www.dao.UserEntityDao;
-import com.yuehai.webdemo.www.entities.UserEntity;
 import com.yuehai.webdemo.common.utils.HibernateSessionFactory;
+import com.yuehai.webdemo.www.dao.IUserEntityDao;
+import com.yuehai.webdemo.www.entities.UserEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
+
+import javax.transaction.Transactional;
 
 /**
  * Created by 月海 2018/5/10
  */
-public class UserEntityDaoImpl implements UserEntityDao {
+@Repository("userEntityDao")
+@Transactional
+public class UserEntityDaoImpl implements IUserEntityDao {
     @Override
     public boolean addUser(UserEntity user) {
         return false;

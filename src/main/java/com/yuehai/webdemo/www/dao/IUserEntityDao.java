@@ -1,12 +1,12 @@
 package com.yuehai.webdemo.www.dao;
 
 import com.yuehai.webdemo.www.entities.UserEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by 月海 2018/5/10
  */
-public interface UserEntityDao {
-
+public interface IUserEntityDao {
 
     boolean addUser(UserEntity user);
 
