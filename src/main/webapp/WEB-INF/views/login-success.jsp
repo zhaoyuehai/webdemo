@@ -18,6 +18,6 @@
 <body>
 <h1>登录成功</h1>
 <br>
-<a href="<%=path%>/login.jsp">返回</a>
+<a href="<%=path%>views/login.jsp">返回</a>
 </body>
 </html>

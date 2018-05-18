@@ -69,10 +69,10 @@ public class HibernateSessionFactory {
             Transaction transaction = session.getTransaction();
             if (transaction != null)
                 transaction.rollback();
-        } finally {
-            if (session != null && session.isOpen())
-                session.close();
-//            ourSessionFactory.close();
         }
+    }
+
+    public static void closeSessionFactory() {
+        ourSessionFactory.close();
     }
 }

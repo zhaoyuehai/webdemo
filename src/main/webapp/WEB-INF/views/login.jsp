@@ -12,7 +12,7 @@
     <title>Login</title>
 </head>
 <body>
-<form action="/user/login.do" method="post">
+<form action="/login.do" method="post">
     <table align="center" border="2">
         <tr>
             <td>用户名：</td>

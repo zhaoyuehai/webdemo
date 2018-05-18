@@ -32,5 +32,15 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'lib')
     compile 'org.springframework:spring-context:5.0.6.RELEASE'
     compile 'org.springframework:spring-webmvc:5.0.6.RELEASE'
+    // json相关依赖
+    compile("com.alibaba:fastjson:1.2.7")
 
+//    Jackson在Spring5.x下报错。
+//    compile("com.fasterxml.jackson.core:jackson-databind:2.2.3")
+//    compile("com.fasterxml.jackson.core:jackson-core:2.2.3")
+//    compile("com.fasterxml.jackson.core:jackson-annotations:2.2.3")
+
+//    compile("org.dom4j:com.springsource.org.dom4j:1.6.1")
+//
+//    compile("com.google.guava:guava:17.0")
 }

@@ -1,9 +1,12 @@
 package com.yuehai.webdemo.www.service.impl;
 
 import com.yuehai.webdemo.www.dao.IUserEntityDao;
+import com.yuehai.webdemo.www.entities.UserEntity;
 import com.yuehai.webdemo.www.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by 月海 2018/5/11
@@ -17,5 +20,19 @@ public class UserServiceImpl implements IUserService {
     @Override
     public boolean login(String username, String password) {
         return true;
+    }
+
+    @Override
+    public List<UserEntity> getUserList() {
+        return userEntityDao.getUserList();
+    }
+
+    public UserEntity findUserById(int id) {
+        return userEntityDao.findUserById(id);
+    }
+
+    @Override
+    public boolean deleteUserById(int id) {
+        return userEntityDao.deleteUserById(id);
     }
 }

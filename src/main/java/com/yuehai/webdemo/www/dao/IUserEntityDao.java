@@ -3,6 +3,8 @@ package com.yuehai.webdemo.www.dao;
 import com.yuehai.webdemo.www.entities.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 /**
  * Created by 月海 2018/5/10
  */
@@ -14,5 +16,9 @@ public interface IUserEntityDao {
 
     boolean updateUser(UserEntity user);
 
-    UserEntity getUserById(int id);
+    UserEntity findUserById(int id);
+
+    List<UserEntity> getUserList();
+
+
 }
