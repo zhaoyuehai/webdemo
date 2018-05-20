@@ -32,6 +32,11 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public void addUser(UserEntity userEntity) {
+        userEntityDao.addUser(userEntity);
+    }
+
+    @Override
     public boolean deleteUserById(int id) {
         return userEntityDao.deleteUserById(id);
     }

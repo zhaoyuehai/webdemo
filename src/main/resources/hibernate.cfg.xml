@@ -35,4 +35,5 @@
         <mapping resource="com/yuehai/webdemo/www/entities/UserEntity.hbm.xml"/>
         <mapping class="com.yuehai.webdemo.www.entities.UserEntity"/>
     </session-factory>
+
 </hibernate-configuration>

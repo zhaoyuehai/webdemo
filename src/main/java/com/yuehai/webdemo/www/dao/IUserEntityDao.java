@@ -1,7 +1,6 @@
 package com.yuehai.webdemo.www.dao;
 
 import com.yuehai.webdemo.www.entities.UserEntity;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -10,7 +9,7 @@ import java.util.List;
  */
 public interface IUserEntityDao {
 
-    boolean addUser(UserEntity user);
+    void addUser(UserEntity user);
 
     boolean deleteUserById(int id);
 

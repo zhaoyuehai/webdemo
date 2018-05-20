@@ -6,7 +6,8 @@
 
     <class name="com.yuehai.webdemo.www.entities.UserEntity" table="user" schema="day12">
         <id name="id">
-            <column name="id" sql-type="int(11)"/>
+            <!--<column name="id" sql-type="int(11)"/>-->
+            <generator class="increment" />
         </id>
         <property name="userName">
             <column name="user_name" sql-type="varchar(30)" length="30" not-null="true"/>

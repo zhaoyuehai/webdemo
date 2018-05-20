@@ -21,6 +21,8 @@ public interface IUserService {
 
     UserEntity findUserById(int id);
 
+    void addUser(UserEntity userEntity);
+
     /**
      * 根据id删除
      *

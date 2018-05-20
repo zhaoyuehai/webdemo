@@ -17,9 +17,14 @@ import java.util.List;
 @Repository("userEntityDao")
 @Transactional
 public class UserEntityDaoImpl implements IUserEntityDao {
+
     @Override
-    public boolean addUser(UserEntity user) {
-        return false;
+    public void addUser(UserEntity user) {
+        Session session = HibernateSessionFactory.getSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(user);
+        transaction.commit();
+        session.close();
     }
 
     @Override

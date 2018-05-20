@@ -1,5 +1,6 @@
 package com.yuehai.webdemo.www.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.yuehai.webdemo.www.entities.BaseEntity;
 import com.yuehai.webdemo.www.entities.UserEntity;
 import com.yuehai.webdemo.www.entities.UserResultEntity;
@@ -8,9 +9,7 @@ import com.yuehai.webdemo.www.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -26,6 +25,23 @@ public class UserController {
 
     @Autowired
     private IUserService userService;
+
+    @ResponseBody
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    public BaseEntity addUser(@RequestBody String data) {
+        System.out.println("------data:" + data);
+        BaseEntity entity = new BaseEntity();
+        UserEntity userEntity = JSON.parseObject(data, UserEntity.class);
+        if (userEntity != null) {
+            userService.addUser(userEntity);
+            entity.setCode(0);
+            entity.setMessage("添加成功");
+        } else {
+            entity.setCode(1);
+            entity.setMessage("添加失败");
+        }
+        return entity;
+    }
 
     @ResponseBody
     @RequestMapping("/getUserList")
